@@ -1,0 +1,119 @@
+config-version: 5
+
+
+
+
+timer:
+  ## The amount of seconds everyone starts off with
+  ## default: 86400 (24 hours)
+  start-time-in-seconds: 5400
+
+  ## When set to true, players who join the server late will have their time set to a fair
+  ## amount automatically (same amount of time as the person who currently has the most)
+  balanced-time-for-latecomers: true
+
+  ## The amount of seconds a player will have after being revived
+  ## This only applies if recipes.revival-item.enabled is set to true
+  ## default: 10800 (3 hours)
+  seconds-on-revival: 10800
+
+
+
+
+boogeyman:
+  ## The amount of time it takes for the boogeyman to actually be rolled
+  ## after running the command
+  roll-delay-in-minutes: 10
+
+  ## Determines whether reminders will be sent out to everyone.
+  ## I recommend disabling this if the roll-delay-in-minutes is set to less than 10.
+  reminders: true
+
+  ## The maximum and minimum amount of boogeymen that are able to be chosen
+  ## Set both to the same value to force a certain amount
+  amount-min: 1
+  amount-max: 1
+
+  ## The amount of time gained when a boogeyman secures a kill (in seconds)
+  time-gain-on-boogey-kill: 360
+
+  ## The amount of time lost when someone gets killed by a boogeyman (in seconds)
+  time-lost-on-boogey-death: 720
+
+  ## Determines whether red names can be chosen as a boogeyman
+  red-boogeymen: true
+
+
+
+
+penalties:
+  ## The amount of time players lose upon dying (in seconds)
+  time-lost-on-death: 360
+
+  ## Determines whether players will lose time when killed by someone with the same
+  ## name colour as them (doesn't apply to red names or boogeyman deaths)
+  subtract-time-on-death-same-colour: true
+
+
+
+
+rewards:
+  ## The amount of time players upon killing someone (in seconds)
+  time-gain-on-kill: 180
+
+  ## Determines whether players will receive time when they kill someone with
+  ## the same name colour as them (doesn't apply to red names or boogeymen)
+  add-time-on-kill-same-colour: true
+
+
+
+
+name-colour-thresholds:
+  ## The amount of time the player needs to have less than in order to become a red name (in seconds)
+  ## default: 1800 (8 hours)
+  red-name: 1800
+
+  ## The amount of time the player needs to have less than in order to become a yellow name (in seconds)
+  ## default: 3600 (16 hours)
+  yellow-name: 3600
+
+  ## The amount of time the player needs to have less than in order to become a green name (in seconds)
+  ## Only applies if dark-green-names is set to true
+  ## default: 5400 (24 hours)
+  green-name: 5400
+
+  ## Determines whether people with more time than specified in the field above will have a dark green name
+  dark-green-names: false
+
+
+
+
+## Please note that the following settings only get applied while in survival mode. ###################### !!! ######################
+recipes:
+  ## The following five settings determine whether the listed items are craftable, able to be picked up, or able to be interacted with in an inventory
+  helmets-unobtainable: true
+  bookshelves-unobtainable: true
+  netherite-unobtainable: false
+  golden-apples-unobtainable: false
+  enchanted-golden-apples-unobtainable: false
+
+  ## Creates a new recipe for tnt which replaces most of the gunpowder required with paper
+  paper-tnt: true
+
+  ## Determines whether saddles and/or name tags are craftable
+  craftable-saddle: true
+  craftable-name-tag: true
+  craftable-slimeball: false
+
+  ## Determines whether an item with the ability to revive players can be crafted
+  ## For the recipe, please make sure to use the correct enum names for materials
+  ## https://hub.spigotmc.org/javadocs/spigot/org/bukkit/Material.html
+  revival-item:
+    enabled: false
+    ## Determines whether the clock should be removed from the player's inventory after being used
+    consume-on-usage: true
+    ## Determines whether revived players should be teleported to the main world's spawn location (level-name in server.properties)
+    teleport-to-world-spawn: true
+    row1: BLAZE_ROD DIAMOND_BLOCK BLAZE_ROD
+    row2: REDSTONE_BLOCK CLOCK REDSTONE_BLOCK
+    row3: GOLDEN_APPLE DIAMOND_BLOCK GOLDEN_APPLE
